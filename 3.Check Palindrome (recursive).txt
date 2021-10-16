@@ -1,0 +1,61 @@
+Chapter Assignment
+Problem Statement: Check Palindrome (recursive)
+Problem Level: MEDIUM
+Problem Description:
+Check whether a given String S is a palindrome using recursion. Return true or false.
+Input Format :
+String S
+
+Output Format :
+'true' or 'false'
+
+Constraints :
+0 <= |S| <= 1000
+where |S| represents length of string S.
+
+Sample Input 1 :
+racecar
+
+Sample Output 1:
+true
+
+Sample Input 2 :
+ninja
+
+Sample Output 2:
+false
+
+Code 
+#include <bits/stdc++.h>
+
+using namespace std;
+bool checkStr(char ar[],int a,int b)
+{
+    if(a==b)
+    {
+        return true;
+    }
+    if(ar[a]==ar[b])
+    {
+        return checkStr(ar,a+1,b-1);
+    }
+    else return false;
+}
+int main()
+{
+   int n;
+   cin>>n;
+   char ar[n];
+  for(int i=0;i<n;i++)
+   {
+       cin>>ar[i];
+   }
+//   for(int i=0;i<n;i++)
+//   {
+//       cout<<ar[i]<<" ";
+//   }
+
+    cout<<checkStr(ar,0,n-1);
+}
+
+
